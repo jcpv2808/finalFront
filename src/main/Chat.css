@@ -1,0 +1,256 @@
+/* Estilo principal del chat */
+#bodychat {
+  position: fixed;
+  bottom: 20px;  /* Ajusta la distancia desde la parte inferior de la pantalla */
+  right: 20px;   /* Ajusta la distancia desde el lado derecho de la pantalla */
+  width: 350px;  /* Ancho del chat */
+  height: 500px; /* Altura del chat */
+  background-color: #fff; /* Fondo blanco para el chat */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar efecto de profundidad */
+  z-index: 9999; /* Asegura que el chat esté encima de otros elementos */
+  animation: fadeInUp 0.5s ease-in-out; /* Animación de entrada suave */
+  padding: 0;
+}
+
+#chatContainer {
+  height: 100%;
+}
+
+#chatContainer>.chat {
+  height: 100%;
+  width: 100%;
+}
+
+
+/* Animación de entrada del chat */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para la tarjeta del chat */
+.chat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Cabecera del chat */
+.card-header {
+  background-color: #F6A821;
+  color: #000;
+  padding: 15px;
+  font-weight: bold;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Información del usuario en la cabecera */
+.user_info {
+  font-size: 16px;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.video_cam {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Estilo de la parte de los mensajes */
+.msg_card_body {
+  overflow-y: auto; /* Permite desplazamiento vertical en los mensajes */
+  flex-grow: 1;
+  padding: 15px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+
+.msg_card_body>.justify-content-end{
+  justify-content: end;
+  display: flex;
+}
+
+/* Estilo de los mensajes enviados por el usuario */
+.msg_container_send {
+  background-color: #F6A821;
+  color: #000;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 75%;
+  font-size: 14px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  align-self: flex-end;
+}
+
+/* Estilo de los mensajes recibidos */
+.msg_container {
+  background-color: #e5e5e5;
+  color: #333;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 75%;
+  font-size: 14px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Asegura que la imagen del usuario esté al lado de su mensaje */
+.img_cont_msg {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.user_img_msg {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* Estilo del formulario de entrada */
+form {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.send_btn {
+  margin-left: 10px;
+  background-color: #F6A821;
+  border: none;
+  color: white;
+  padding-top: 10px;
+  padding-right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.send_btn:hover {
+  background-color: #d6931f;
+}
+
+.send_btn:focus {
+  outline: none;
+}
+
+/* Estilo para el botón de login */
+.position-fixed {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 10000;
+}
+
+.position-fixed button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.position-fixed button:hover {
+  background-color: #218838;
+}
+
+.position-fixed button:focus {
+  outline: none;
+}
+
+/* Estilo para la cabecera del chat */
+.card-header .user_info p {
+  font-size: 14px;
+  color: #000;
+}
+
+.card-header .user_info span {
+  color: #000;
+}
+
+.card-header .user_info span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Animación para los mensajes que entran */
+@keyframes fadeInMessage {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aplicar animación a cada mensaje entrante */
+.msg_cotainer,
+.msg_cotainer_send {
+  animation: fadeInMessage 0.3s ease-in-out;
+}
+.input-group{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#valor-INPUT{
+  width: 100%;
+  border-radius: 20px ;
+  color: #fff;
+}
+.send_btn_chat {
+  background-color: #F6A821; 
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.closeChat{
+  padding-right: 15px;
+  color: #444;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.closeChat:hover{
+  color: #555;
+}

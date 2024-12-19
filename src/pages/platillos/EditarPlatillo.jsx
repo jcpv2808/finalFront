@@ -90,7 +90,7 @@ function EditarPlatillo() {
                     id="nombrePlatillo"
                     placeholder="Nombre del platillo"
                     onChange={(e) => setNombre(e.target.value)}
-                    value={platillo.nombre}
+                    value={nombre}
                   />
                 </div>
 
